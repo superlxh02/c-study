@@ -1,0 +1,54 @@
+<svg width="680" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">删除节点 — 删除前</text>
+
+  <rect x="20" y="40" width="50" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="45" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">head</text>
+  <line x1="70" y1="70" x2="110" y2="70" stroke="#4A90D9" stroke-width="2" marker-end="url(#arr5)"/>
+
+  <rect x="115" y="40" width="120" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="175" y="75" text-anchor="middle" font-size="13" fill="#333">10</text>
+  <line x1="235" y1="70" x2="275" y2="70" stroke="#4A90D9" stroke-width="2" marker-end="url(#arr5)"/>
+
+  <!-- 要删除的节点 -->
+  <rect x="280" y="40" width="120" height="60" rx="6" fill="#FFEBEE" stroke="#D32F2F" stroke-width="3"/>
+  <text x="340" y="75" text-anchor="middle" font-size="13" fill="#D32F2F">20</text>
+  <text x="340" y="30" text-anchor="middle" font-size="10" fill="#D32F2F">← 要删除的节点</text>
+  <line x1="400" y1="70" x2="440" y2="70" stroke="#D32F2F" stroke-width="2" marker-end="url(#arr5)"/>
+
+  <rect x="445" y="40" width="120" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="505" y="75" text-anchor="middle" font-size="13" fill="#333">30</text>
+  <text x="545" y="40" text-anchor="middle" font-size="10" fill="#888">NULL</text>
+
+  <!-- 前驱节点标记 -->
+  <text x="175" y="20" text-anchor="middle" font-size="10" fill="#1565C0">前驱节点 p</text>
+
+  <!-- 分割线 -->
+  <line x1="30" y1="155" x2="650" y2="155" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="340" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">删除后 — 前驱节点绕过被删节点，然后释放内存</text>
+
+  <rect x="20" y="190" width="50" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="45" y="225" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">head</text>
+  <line x1="70" y1="220" x2="110" y2="220" stroke="#4A90D9" stroke-width="2" marker-end="url(#arr5)"/>
+
+  <rect x="115" y="190" width="120" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="175" y="225" text-anchor="middle" font-size="13" fill="#333">10</text>
+
+  <!-- 新箭头绕过被删节点 -->
+  <path d="M 235 220 C 265 220, 265 205, 295 205 L 485 205 C 505 205, 505 220, 505 220" stroke="#2E7D32" stroke-width="2.5" fill="none" marker-end="url(#arr5)" stroke-dasharray="8,3"/>
+
+  <rect x="445" y="190" width="120" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="505" y="225" text-anchor="middle" font-size="13" fill="#333">30</text>
+  <text x="545" y="190" text-anchor="middle" font-size="10" fill="#888">NULL</text>
+
+  <!-- 被释放的节点 -->
+  <rect x="280" y="180" width="100" height="30" rx="4" fill="#eee" stroke="#999" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="330" y="200" text-anchor="middle" font-size="10" fill="#999">20 (已free)</text>
+
+  <text x="340" y="275" text-anchor="middle" font-size="11" fill="#2E7D32">p→next = temp→next 让前驱节点 10 直接指向 30，然后 free(20)</text>
+</svg>

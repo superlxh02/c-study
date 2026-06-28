@@ -1,0 +1,39 @@
+<svg width="680" height="290" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="db3-arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2E7D32"/>
+    </marker>
+    <marker id="db3-arr2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">双链表删除 — 直接绕过目标节点</text>
+
+  <!-- 三个节点 -->
+  <rect x="30" y="50" width="140" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="100" y="85" text-anchor="middle" font-size="13" fill="#333">10</text>
+
+  <rect x="220" y="50" width="140" height="60" rx="6" fill="#FFEBEE" stroke="#D32F2F" stroke-width="3"/>
+  <text x="290" y="85" text-anchor="middle" font-size="13" fill="#D32F2F">20</text>
+  <text x="290" y="35" text-anchor="middle" font-size="10" fill="#D32F2F">← 要删除的节点 p</text>
+
+  <rect x="410" y="50" width="140" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="480" y="85" text-anchor="middle" font-size="13" fill="#333">30</text>
+
+  <!-- 双向箭头 -->
+  <line x1="170" y1="72" x2="215" y2="72" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#db3-arr2)"/>
+  <line x1="215" y1="95" x2="170" y2="95" stroke="#E65100" stroke-width="1.5"/>
+
+  <line x1="360" y1="72" x2="405" y2="72" stroke="#D32F2F" stroke-width="1.5"/>
+  <line x1="405" y1="95" x2="360" y2="95" stroke="#D32F2F" stroke-width="1.5"/>
+
+  <!-- 关键操作描述 -->
+  <text x="340" y="165" text-anchor="middle" font-size="12" fill="#555">步骤①：p→prev→next = p→next   (10的next指向30)</text>
+  <text x="340" y="183" text-anchor="middle" font-size="12" fill="#555">步骤②：p→next→prev = p→prev   (30的prev指向10)</text>
+  <text x="340" y="201" text-anchor="middle" font-size="12" fill="#555">步骤③：free(p)                  (释放节点20)</text>
+
+  <!-- 结果 -->
+  <line x1="30" y1="225" x2="650" y2="225" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="340" y="265" text-anchor="middle" font-size="12" fill="#2E7D32">删除后：10 ←→ 30，节点20被释放</text>
+</svg>

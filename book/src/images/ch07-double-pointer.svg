@@ -1,0 +1,41 @@
+<svg width="720" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowDP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">二级指针：pp → p → a</text>
+
+  <!-- 变量 a -->
+  <rect x="30" y="50" width="160" height="80" rx="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="110" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32">变量 a（int）</text>
+  <line x1="45" y1="80" x2="175" y2="80" stroke="#2E7D32" stroke-width="0.5"/>
+  <text x="110" y="98" text-anchor="middle" font-size="12" fill="#333">值：100</text>
+  <text x="110" y="118" text-anchor="middle" font-size="11" fill="#888">地址：0x1000</text>
+
+  <!-- 箭头 p → a -->
+  <path d="M 355 90 L 195 90" stroke="#4A90D9" stroke-width="2" fill="none" marker-end="url(#arrowDP)"/>
+
+  <!-- 变量 p -->
+  <rect x="280" y="50" width="160" height="80" rx="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="360" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">变量 p（int*）</text>
+  <line x1="295" y1="80" x2="425" y2="80" stroke="#1565C0" stroke-width="0.5"/>
+  <text x="360" y="98" text-anchor="middle" font-size="12" fill="#333">值：0x1000</text>
+  <text x="360" y="118" text-anchor="middle" font-size="11" fill="#888">地址：0x2000</text>
+
+  <!-- 箭头 pp → p -->
+  <path d="M 605 90 L 445 90" stroke="#4A90D9" stroke-width="2" fill="none" marker-end="url(#arrowDP)"/>
+
+  <!-- 变量 pp -->
+  <rect x="530" y="50" width="160" height="80" rx="8" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="610" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#7B1FA2">变量 pp（int**）</text>
+  <line x1="545" y1="80" x2="675" y2="80" stroke="#7B1FA2" stroke-width="0.5"/>
+  <text x="610" y="98" text-anchor="middle" font-size="12" fill="#333">值：0x2000</text>
+  <text x="610" y="118" text-anchor="middle" font-size="11" fill="#888">地址：0x3000</text>
+
+  <!-- 底部说明 -->
+  <rect x="80" y="160" width="560" height="42" rx="6" fill="#F5F5F5" stroke="#DDD" stroke-width="1"/>
+  <text x="360" y="178" text-anchor="middle" font-size="12" fill="#555">解引用链：**pp → 先找到 p（*pp），再找到 a（**pp），最终拿到 100</text>
+  <text x="360" y="194" text-anchor="middle" font-size="12" fill="#555">pp、p、a 是三个独立的变量，各自在不同的内存地址，各自有自己的值</text>
+</svg>

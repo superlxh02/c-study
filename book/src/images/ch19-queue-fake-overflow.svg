@@ -1,0 +1,48 @@
+<svg width="550" height="260" xmlns="http://www.w3.org/2000/svg">
+  <text x="275" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#D32F2F">普通数组队列 — "假溢出"问题</text>
+
+  <text x="150" y="46" text-anchor="middle" font-size="10" fill="#888">入队 10, 20, 30, 40, 50</text>
+  <text x="440" y="46" text-anchor="middle" font-size="10" fill="#888">出队 10, 20 后，再入队 60</text>
+
+  <!-- 左侧：已满 -->
+  <rect x="20" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="75" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="130" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="185" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="240" y="58" width="55" height="40" fill="#90CAF9" stroke="#0D47A1" stroke-width="2"/>
+
+  <text x="47" y="83" text-anchor="middle" font-size="12" fill="#333">10</text>
+  <text x="102" y="83" text-anchor="middle" font-size="12" fill="#333">20</text>
+  <text x="157" y="83" text-anchor="middle" font-size="12" fill="#333">30</text>
+  <text x="212" y="83" text-anchor="middle" font-size="12" fill="#333">40</text>
+  <text x="267" y="83" text-anchor="middle" font-size="12" fill="#0D47A1">50</text>
+
+  <text x="47" y="48" text-anchor="middle" font-size="9" fill="#D32F2F">front</text>
+  <text x="267" y="48" text-anchor="middle" font-size="9" fill="#2E7D32">rear</text>
+
+  <!-- 中间箭头 -->
+  <text x="305" y="83" text-anchor="middle" font-size="16" fill="#4A90D9">→</text>
+  <text x="305" y="98" text-anchor="middle" font-size="9" fill="#888">然后出队</text>
+
+  <!-- 右侧：假溢出 -->
+  <rect x="335" y="58" width="55" height="40" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="390" y="58" width="55" height="40" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="445" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="500" y="58" width="55" height="40" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="555" y="58" width="55" height="40" fill="#90CAF9" stroke="#0D47A1" stroke-width="2"/>
+
+  <text x="362" y="83" text-anchor="middle" font-size="10" fill="#BDBDBD">空</text>
+  <text x="417" y="83" text-anchor="middle" font-size="10" fill="#BDBDBD">空</text>
+  <text x="472" y="83" text-anchor="middle" font-size="12" fill="#333">30</text>
+  <text x="527" y="83" text-anchor="middle" font-size="12" fill="#333">40</text>
+  <text x="582" y="83" text-anchor="middle" font-size="12" fill="#0D47A1">50</text>
+
+  <text x="472" y="48" text-anchor="middle" font-size="9" fill="#D32F2F">front</text>
+  <text x="582" y="48" text-anchor="middle" font-size="9" fill="#2E7D32">rear</text>
+
+  <!-- 问题标注 -->
+  <text x="275" y="175" text-anchor="middle" font-size="12" fill="#D32F2F">← front 和 rear 不断前移，前面的空位被浪费</text>
+  <text x="275" y="195" text-anchor="middle" font-size="12" fill="#D32F2F">rear 已到数组末尾，但 queue 实际上没有满——"假溢出"！</text>
+
+  <text x="275" y="225" text-anchor="middle" font-size="10" fill="#888">入队更多数据前空出的 [0][1] 已无法使用</text>
+</svg>

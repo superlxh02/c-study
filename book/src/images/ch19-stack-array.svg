@@ -1,0 +1,31 @@
+<svg width="550" height="230" xmlns="http://www.w3.org/2000/svg">
+  <text x="275" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">基于数组的栈 — 结构示意图</text>
+
+  <!-- 数组格子 -->
+  <rect x="30" y="50" width="80" height="50" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="70" y="80" text-anchor="middle" font-size="14" fill="#333">10</text>
+  <text x="70" y="45" text-anchor="middle" font-size="10" fill="#888">[0]</text>
+
+  <rect x="110" y="50" width="80" height="50" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="150" y="80" text-anchor="middle" font-size="14" fill="#333">20</text>
+  <text x="150" y="45" text-anchor="middle" font-size="10" fill="#888">[1]</text>
+
+  <rect x="190" y="50" width="80" height="50" fill="#90CAF9" stroke="#0D47A1" stroke-width="2"/>
+  <text x="230" y="80" text-anchor="middle" font-size="14" fill="#0D47A1">30</text>
+  <text x="230" y="45" text-anchor="middle" font-size="10" fill="#0D47A1">[2] top</text>
+
+  <rect x="270" y="50" width="80" height="50" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1.5"/>
+  <text x="310" y="80" text-anchor="middle" font-size="14" fill="#BDBDBD">?</text>
+  <text x="310" y="45" text-anchor="middle" font-size="10" fill="#888">[3]</text>
+
+  <rect x="350" y="50" width="80" height="50" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1.5"/>
+  <text x="390" y="80" text-anchor="middle" font-size="14" fill="#BDBDBD">?</text>
+  <text x="390" y="45" text-anchor="middle" font-size="10" fill="#888">[4]</text>
+
+  <!-- top指针标注 -->
+  <line x1="230" y1="115" x2="230" y2="155" stroke="#0D47A1" stroke-width="1.5"/>
+  <text x="230" y="170" text-anchor="middle" font-size="11" fill="#0D47A1">top = 2</text>
+  <text x="400" y="155" font-size="11" fill="#555">栈顶在第2格</text>
+  <text x="400" y="172" font-size="10" fill="#888">入栈放在 top+1 的位置</text>
+  <text x="400" y="188" font-size="10" fill="#888">出栈取出 top 位置的元素</text>
+</svg>

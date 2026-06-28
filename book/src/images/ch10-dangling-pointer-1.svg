@@ -1,0 +1,68 @@
+<svg width="920" height="270" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#E53935"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#EF6C00"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#757575"/>
+    </marker>
+  </defs>
+
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">情况一：同一指针 free 后继续使用</text>
+
+  <!-- ① 分配后 -->
+  <rect x="25" y="50" width="250" height="145" rx="10" fill="#F1F8E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="150" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#2E7D32">① malloc 分配后</text>
+  <line x1="45" y1="88" x2="255" y2="88" stroke="#2E7D32" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="50" y="100" width="200" height="34" rx="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+  <text x="150" y="122" text-anchor="middle" font-size="13" font-family="monospace" fill="#333">p = 0xB800</text>
+
+  <rect x="50" y="148" width="200" height="38" rx="4" fill="#A5D6A7" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="150" y="166" text-anchor="middle" font-size="11" fill="#333">堆内存 0xB800</text>
+  <text x="150" y="181" text-anchor="middle" font-size="10" fill="#555">值 = 42 ✓</text>
+
+  <line x1="150" y1="134" x2="150" y2="148" stroke="#2E7D32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- → -->
+  <line x1="275" y1="122" x2="330" y2="122" stroke="#666" stroke-width="2.5" marker-end="url(#arrowGray)"/>
+
+  <!-- ② 释放后 -->
+  <rect x="345" y="50" width="250" height="145" rx="10" fill="#FFF8E1" stroke="#EF6C00" stroke-width="2"/>
+  <text x="470" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#EF6C00">② free(p) 后</text>
+  <line x1="365" y1="88" x2="575" y2="88" stroke="#EF6C00" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="370" y="100" width="200" height="34" rx="4" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1"/>
+  <text x="470" y="122" text-anchor="middle" font-size="13" font-family="monospace" fill="#E65100">p = 0xB800</text>
+  <text x="470" y="138" text-anchor="middle" font-size="10" fill="#EF6C00">地址还在</text>
+
+  <rect x="370" y="148" width="200" height="38" rx="4" fill="#FFCC80" stroke="#EF6C00" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="470" y="166" text-anchor="middle" font-size="11" fill="#E65100">已归还系统</text>
+  <text x="470" y="181" text-anchor="middle" font-size="10" fill="#E65100">内容未知 ✗</text>
+
+  <line x1="470" y1="138" x2="470" y2="148" stroke="#EF6C00" stroke-width="2" marker-end="url(#arrowOrange)" stroke-dasharray="6,3"/>
+
+  <!-- → -->
+  <line x1="595" y1="122" x2="650" y2="122" stroke="#666" stroke-width="2.5" marker-end="url(#arrowGray)"/>
+
+  <!-- ③ 误用 -->
+  <rect x="665" y="50" width="235" height="145" rx="10" fill="#FFF3F0" stroke="#E53935" stroke-width="2"/>
+  <text x="782" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#E53935">③ *p = 100; 危险！</text>
+  <line x1="685" y1="88" x2="880" y2="88" stroke="#E53935" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="682" y="100" width="200" height="34" rx="4" fill="#FFCDD2" stroke="#E53935" stroke-width="1"/>
+  <text x="782" y="122" text-anchor="middle" font-size="13" font-family="monospace" fill="#D32F2F">p = 0xB800</text>
+
+  <rect x="682" y="148" width="200" height="38" rx="4" fill="#FF8A80" stroke="#D32F2F" stroke-width="1.5"/>
+  <text x="782" y="164" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFF">*p = 100; ⚠</text>
+  <text x="782" y="180" text-anchor="middle" font-size="10" fill="#FFF">崩溃 / 数据损坏</text>
+
+  <line x1="782" y1="134" x2="782" y2="148" stroke="#E53935" stroke-width="2" marker-end="url(#arrowRed)" stroke-dasharray="4,2"/>
+
+</svg>

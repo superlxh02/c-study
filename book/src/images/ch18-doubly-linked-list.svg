@@ -1,0 +1,61 @@
+<svg width="680" height="270" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="db-arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+    <marker id="db-arr-rev" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#E65100"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">双链表结构示意图</text>
+
+  <!-- head -->
+  <rect x="10" y="60" width="50" height="80" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="35" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">head</text>
+
+  <!-- 节点1 -->
+  <rect x="90" y="60" width="170" height="80" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <line x1="165" y1="60" x2="165" y2="140" stroke="#1565C0" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="220" y1="60" x2="220" y2="140" stroke="#1565C0" stroke-width="1"/>
+  <text x="127" y="85" text-anchor="middle" font-size="11" fill="#888">prev</text>
+  <text x="192" y="85" text-anchor="middle" font-size="12" fill="#333">10</text>
+  <text x="245" y="120" text-anchor="middle" font-size="11" fill="#1565C0">next</text>
+  <text x="127" y="130" text-anchor="middle" font-size="10" fill="#888">NULL</text>
+
+  <!-- 节点2 -->
+  <rect x="300" y="60" width="170" height="80" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <line x1="375" y1="60" x2="375" y2="140" stroke="#1565C0" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="430" y1="60" x2="430" y2="140" stroke="#1565C0" stroke-width="1"/>
+  <text x="337" y="85" text-anchor="middle" font-size="11" fill="#888">prev</text>
+  <text x="402" y="85" text-anchor="middle" font-size="12" fill="#333">20</text>
+  <text x="455" y="120" text-anchor="middle" font-size="11" fill="#1565C0">next</text>
+
+  <!-- 节点3 -->
+  <rect x="510" y="60" width="160" height="80" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <line x1="575" y1="60" x2="575" y2="140" stroke="#1565C0" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="625" y1="60" x2="625" y2="140" stroke="#1565C0" stroke-width="1"/>
+  <text x="542" y="85" text-anchor="middle" font-size="11" fill="#888">prev</text>
+  <text x="602" y="85" text-anchor="middle" font-size="12" fill="#333">30</text>
+  <text x="648" y="120" text-anchor="middle" font-size="11" fill="#1565C0">next</text>
+  <text x="648" y="130" text-anchor="middle" font-size="10" fill="#888">NULL</text>
+
+  <!-- 正向箭头 (next) 在上方 -->
+  <line x1="260" y1="88" x2="295" y2="88" stroke="#4A90D9" stroke-width="2" marker-end="url(#db-arr)"/>
+  <line x1="470" y1="88" x2="505" y2="88" stroke="#4A90D9" stroke-width="2" marker-end="url(#db-arr)"/>
+
+  <!-- 反向箭头 (prev) 在下方 -->
+  <line x1="295" y1="118" x2="260" y2="118" stroke="#E65100" stroke-width="2" marker-end="url(#db-arr-rev)"/>
+  <line x1="505" y1="118" x2="470" y2="118" stroke="#E65100" stroke-width="2" marker-end="url(#db-arr-rev)"/>
+
+  <!-- 箭头 head 到节点1 -->
+  <line x1="60" y1="100" x2="85" y2="100" stroke="#4A90D9" stroke-width="2" marker-end="url(#db-arr)"/>
+
+  <!-- 图例 -->
+  <rect x="150" y="180" width="12" height="12" fill="none" stroke="#4A90D9" stroke-width="2"/>
+  <text x="168" y="191" font-size="11" fill="#555">next 正向指针（向后）</text>
+  <rect x="330" y="180" width="12" height="12" fill="none" stroke="#E65100" stroke-width="2"/>
+  <text x="348" y="191" font-size="11" fill="#555">prev 反向指针（向前）</text>
+
+  <text x="340" y="240" text-anchor="middle" font-size="11" fill="#888">每个节点有两个指针：prev 指向前一个节点，next 指向后一个节点</text>
+</svg>

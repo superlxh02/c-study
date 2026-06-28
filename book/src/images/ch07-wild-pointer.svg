@@ -1,0 +1,71 @@
+<svg width="720" height="380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#E53935"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9E9E9E"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2E7D32"/>
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="360" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">未初始化的指针（野指针） — 危险示意图</text>
+
+  <!-- ====== 左侧：未初始化的指针 ====== -->
+  <rect x="30" y="50" width="300" height="280" rx="8" fill="#FFF3F0" stroke="#E53935" stroke-width="2"/>
+  <text x="180" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#E53935">❌ 未初始化</text>
+  <line x1="50" y1="84" x2="310" y2="84" stroke="#E53935" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 指针变量自身 -->
+  <rect x="70" y="100" width="220" height="44" rx="4" fill="#FFCDD2" stroke="#E53935" stroke-width="1.5"/>
+  <text x="180" y="117" text-anchor="middle" font-size="13" fill="#333">int *p;  （未初始化）</text>
+  <text x="180" y="135" text-anchor="middle" font-size="11" fill="#888">p 的值：???（垃圾值）</text>
+
+  <!-- 箭头从指针指向随机位置 -->
+  <line x1="180" y1="148" x2="180" y2="190" stroke="#E53935" stroke-width="2" marker-end="url(#arrowRed)" stroke-dasharray="6,3"/>
+  <text x="195" y="175" font-size="11" fill="#E53935">指向 ???</text>
+
+  <!-- 随机内存区域 -->
+  <rect x="60" y="195" width="240" height="60" rx="4" fill="#FF8A80" stroke="#D32F2F" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="180" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFF">⚠ 未知内存区域</text>
+  <text x="180" y="235" text-anchor="middle" font-size="11" fill="#FFF">可能是系统关键数据、其他程序的内存</text>
+  <text x="180" y="250" text-anchor="middle" font-size="11" fill="#FFF">甚至是不可读写的保护区域</text>
+
+  <!-- 危险标注 -->
+  <text x="180" y="278" text-anchor="middle" font-size="11" fill="#D32F2F">*p = 100; → 数据写到未知区域！</text>
+  <text x="180" y="296" text-anchor="middle" font-size="11" fill="#D32F2F">后果：崩溃 / 数据损坏 / 安全漏洞</text>
+
+  <!-- 箭头标注文字 -->
+  <text x="248" y="168" font-size="12" fill="#E53935" font-weight="bold">读取 p 中的垃圾值</text>
+
+  <!-- ====== 右侧：正确做法 ====== -->
+  <rect x="380" y="50" width="310" height="280" rx="8" fill="#F1F8E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="535" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#2E7D32">✅ 正确做法：初始化为 NULL</text>
+  <line x1="400" y1="84" x2="670" y2="84" stroke="#2E7D32" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 指针变量自身 -->
+  <rect x="425" y="100" width="220" height="44" rx="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="535" y="117" text-anchor="middle" font-size="13" fill="#333">int *p = NULL;  （已初始化）</text>
+  <text x="535" y="135" text-anchor="middle" font-size="11" fill="#888">p 的值：NULL（明确表示"不指向任何地方"）</text>
+
+  <!-- NULL 符号 -->
+  <rect x="475" y="170" width="120" height="36" rx="4" fill="#FFF9C4" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="535" y="193" text-anchor="middle" font-size="13" font-weight="bold" fill="#F57F17">NULL（空）</text>
+
+  <!-- 箭头从指针指向 NULL -->
+  <line x1="535" y1="148" x2="535" y2="166" stroke="#9E9E9E" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 安全标注 -->
+  <text x="535" y="240" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="bold">解引用前先判空：</text>
+  <rect x="435" y="252" width="200" height="30" rx="3" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1"/>
+  <text x="535" y="272" text-anchor="middle" font-size="12" fill="#333" font-family="monospace">if (p != NULL)  *p = 100;</text>
+
+  <text x="535" y="305" text-anchor="middle" font-size="11" fill="#666">NULL 明确告诉所有人：此刻我不指向任何有效地址</text>
+
+  <!-- 底部结论 -->
+  <rect x="120" y="345" width="480" height="28" rx="4" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1"/>
+  <text x="360" y="364" text-anchor="middle" font-size="13" fill="#37474F">结论：声明指针时必须初始化 — 要么指向有效变量，要么设为 NULL</text>
+</svg>

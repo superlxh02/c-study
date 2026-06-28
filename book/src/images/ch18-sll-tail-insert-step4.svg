@@ -1,0 +1,131 @@
+<svg width="840" height="370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4A90D9"/></marker>
+    <marker id="a-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#D32F2F"/></marker>
+    <marker id="a-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2E7D32"/></marker>
+  </defs>
+
+  <!-- 标题 -->
+  <rect x="0" y="0" width="840" height="34" rx="5" fill="#D32F2F"/>
+  <text x="420" y="23" text-anchor="middle" font-size="14" font-weight="bold" fill="white" font-family="sans-serif">步骤④ 尾插法：p→next = newNode —— 将尾节点的 next 从 NULL 改为指向新节点</text>
+
+  <!-- ===== Panel 1: 操作前 ===== -->
+  <rect x="10" y="44" width="262" height="310" rx="8" fill="#FAFAFA" stroke="#E0E0E0" stroke-width="1.5"/>
+  <rect x="10" y="44" width="262" height="30" rx="8" fill="#F5F5F5"/>
+  <rect x="10" y="58" width="262" height="16" fill="#F5F5F5"/>
+  <text x="141" y="76" text-anchor="middle" font-size="12" font-weight="bold" fill="#555" font-family="sans-serif">帧1 — 操作前</text>
+
+  <rect x="16" y="100" width="36" height="28" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.3"/>
+  <text x="34" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100" font-family="sans-serif">head</text>
+
+  <rect x="62" y="92" width="105" height="44" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <line x1="132" y1="92" x2="132" y2="136" stroke="#1565C0" stroke-width="0.8"/>
+  <text x="97" y="110" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="97" y="128" text-anchor="middle" font-size="10" fill="#999" font-family="sans-serif">...</text>
+  <text x="185" y="110" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="185" y="128" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→</text>
+
+  <line x1="52" y1="114" x2="59" y2="114" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#a-b)"/>
+
+  <!-- 尾节点 p -->
+  <rect x="75" y="158" width="110" height="46" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="145" y1="158" x2="145" y2="204" stroke="#2E7D32" stroke-width="1"/>
+  <text x="110" y="176" text-anchor="middle" font-size="10" fill="#666" font-family="sans-serif">data</text>
+  <text x="110" y="194" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32" font-family="sans-serif">30</text>
+  <text x="200" y="176" text-anchor="middle" font-size="9" fill="#999" font-family="sans-serif">next</text>
+  <text x="200" y="194" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="sans-serif">NULL</text>
+
+  <text x="110" y="152" text-anchor="middle" font-size="9" fill="#2E7D32" font-family="sans-serif">p (尾节点)</text>
+
+  <text x="141" y="248" text-anchor="middle" font-size="10" fill="#888" font-family="sans-serif">p→next == NULL</text>
+  <text x="141" y="268" text-anchor="middle" font-size="10" fill="#888" font-family="sans-serif">表示链表在此结束</text>
+  <text x="141" y="300" text-anchor="middle" font-size="9" fill="#aaa" font-family="sans-serif">（步骤③已找到 p）</text>
+
+  <!-- ===== 箭头 ===== -->
+  <text x="285" y="199" text-anchor="middle" font-size="22" fill="#4A90D9" font-family="sans-serif">→</text>
+
+  <!-- ===== Panel 2: 赋值 ===== -->
+  <rect x="300" y="44" width="262" height="310" rx="8" fill="#FFF8F0" stroke="#E65100" stroke-width="2"/>
+  <rect x="300" y="44" width="262" height="30" rx="8" fill="#E65100"/>
+  <rect x="300" y="58" width="262" height="16" fill="#E65100"/>
+  <text x="431" y="76" text-anchor="middle" font-size="12" font-weight="bold" fill="white" font-family="sans-serif">帧2 — 执行赋值</text>
+
+  <rect x="306" y="100" width="36" height="28" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.3"/>
+  <text x="324" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100" font-family="sans-serif">head</text>
+
+  <rect x="352" y="92" width="105" height="44" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <line x1="422" y1="92" x2="422" y2="136" stroke="#1565C0" stroke-width="0.8"/>
+  <text x="387" y="110" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="387" y="128" text-anchor="middle" font-size="10" fill="#999" font-family="sans-serif">...</text>
+  <text x="475" y="110" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="475" y="128" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→</text>
+
+  <line x1="342" y1="114" x2="349" y2="114" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#a-b)"/>
+
+  <!-- 尾节点 p -->
+  <rect x="360" y="158" width="110" height="46" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="430" y1="158" x2="430" y2="204" stroke="#2E7D32" stroke-width="1"/>
+  <text x="395" y="176" text-anchor="middle" font-size="10" fill="#666" font-family="sans-serif">data</text>
+  <text x="395" y="194" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32" font-family="sans-serif">30</text>
+  <text x="485" y="176" text-anchor="middle" font-size="9" fill="#999" font-family="sans-serif">next</text>
+  <text x="485" y="194" text-anchor="middle" font-size="9" fill="#D32F2F" font-family="sans-serif">?</text>
+
+  <text x="395" y="152" text-anchor="middle" font-size="9" fill="#2E7D32" font-family="sans-serif">p</text>
+
+  <!-- 红色赋值弧线 -->
+  <path d="M 300 228 C 300 290, 485 290, 485 252" stroke="#D32F2F" stroke-width="2.5" fill="none" stroke-dasharray="8,3" marker-end="url(#a-r)"/>
+
+  <!-- 新节点 -->
+  <rect x="310" y="242" width="110" height="46" rx="5" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="380" y1="242" x2="380" y2="288" stroke="#D32F2F" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="345" y="260" text-anchor="middle" font-size="10" fill="#666" font-family="sans-serif">data</text>
+  <text x="345" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#D32F2F" font-family="sans-serif">40</text>
+  <text x="435" y="260" text-anchor="middle" font-size="9" fill="#999" font-family="sans-serif">next</text>
+  <text x="435" y="278" text-anchor="middle" font-size="9" fill="#D32F2F" font-family="sans-serif">NULL</text>
+
+  <text x="470" y="272" font-size="9" fill="#D32F2F" font-family="sans-serif">←newNode</text>
+
+  <text x="431" y="315" text-anchor="middle" font-size="9" fill="#D32F2F" font-family="sans-serif">把 newNode 地址写入 p→next</text>
+
+  <!-- ===== 箭头 ===== -->
+  <text x="575" y="199" text-anchor="middle" font-size="22" fill="#2E7D32" font-family="sans-serif">→</text>
+
+  <!-- ===== Panel 3: 结果 ===== -->
+  <rect x="590" y="44" width="240" height="310" rx="8" fill="#F1F8E9" stroke="#2E7D32" stroke-width="2"/>
+  <rect x="590" y="44" width="240" height="30" rx="8" fill="#2E7D32"/>
+  <rect x="590" y="58" width="240" height="16" fill="#2E7D32"/>
+  <text x="710" y="76" text-anchor="middle" font-size="12" font-weight="bold" fill="white" font-family="sans-serif">帧3 — 操作结果</text>
+
+  <rect x="598" y="100" width="36" height="28" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.3"/>
+  <text x="616" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100" font-family="sans-serif">head</text>
+
+  <rect x="644" y="92" width="100" height="44" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <line x1="709" y1="92" x2="709" y2="136" stroke="#1565C0" stroke-width="0.8"/>
+  <text x="676" y="110" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="676" y="128" text-anchor="middle" font-size="10" fill="#999" font-family="sans-serif">...</text>
+  <text x="759" y="110" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="759" y="128" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→</text>
+
+  <!-- 尾节点 p -->
+  <rect x="650" y="158" width="110" height="46" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <line x1="720" y1="158" x2="720" y2="204" stroke="#1565C0" stroke-width="0.8"/>
+  <text x="685" y="176" text-anchor="middle" font-size="10" fill="#666" font-family="sans-serif">data</text>
+  <text x="685" y="194" text-anchor="middle" font-size="12" fill="#333" font-family="sans-serif">30</text>
+  <text x="775" y="176" text-anchor="middle" font-size="9" fill="#999" font-family="sans-serif">next</text>
+  <text x="775" y="194" text-anchor="middle" font-size="9" fill="#2E7D32" font-family="sans-serif">→40</text>
+
+  <!-- 新节点 40 -->
+  <rect x="660" y="228" width="110" height="46" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.8"/>
+  <line x1="730" y1="228" x2="730" y2="274" stroke="#2E7D32" stroke-width="1"/>
+  <text x="695" y="246" text-anchor="middle" font-size="10" fill="#666" font-family="sans-serif">data</text>
+  <text x="695" y="264" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32" font-family="sans-serif">40</text>
+  <text x="785" y="246" text-anchor="middle" font-size="9" fill="#999" font-family="sans-serif">next</text>
+  <text x="785" y="264" text-anchor="middle" font-size="9" fill="#2E7D32" font-family="sans-serif">NULL</text>
+
+  <text x="695" y="308" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="sans-serif">40 成为新的尾节点 ✓</text>
+
+  <line x1="634" y1="114" x2="641" y2="114" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#a-b)"/>
+
+  <!-- 连接弧线 p→40 -->
+  <path d="M 775 190 C 775 212, 730 212, 730 224" stroke="#2E7D32" stroke-width="2" fill="none" marker-end="url(#a-g)"/>
+</svg>

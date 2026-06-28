@@ -1,0 +1,46 @@
+<svg width="680" height="230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="340" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">单链表结构示意图</text>
+
+  <!-- 头指针 -->
+  <rect x="30" y="55" width="50" height="80" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="55" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">head</text>
+
+  <!-- 箭头从头指针到第一个节点 -->
+  <line x1="80" y1="95" x2="125" y2="95" stroke="#4A90D9" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 节点1 -->
+  <rect x="130" y="55" width="140" height="80" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <line x1="220" y1="55" x2="220" y2="135" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="175" y="80" text-anchor="middle" font-size="12" fill="#333">数据: 10</text>
+  <text x="245" y="115" text-anchor="middle" font-size="11" fill="#1565C0">next</text>
+
+  <!-- 箭头从节点1到节点2 -->
+  <line x1="270" y1="95" x2="315" y2="95" stroke="#4A90D9" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 节点2 -->
+  <rect x="320" y="55" width="140" height="80" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <line x1="410" y1="55" x2="410" y2="135" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="365" y="80" text-anchor="middle" font-size="12" fill="#333">数据: 20</text>
+  <text x="435" y="115" text-anchor="middle" font-size="11" fill="#1565C0">next</text>
+
+  <!-- 箭头从节点2到节点3 -->
+  <line x1="460" y1="95" x2="505" y2="95" stroke="#4A90D9" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 节点3（尾节点） -->
+  <rect x="510" y="55" width="140" height="80" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <line x1="600" y1="55" x2="600" y2="135" stroke="#E65100" stroke-width="1.5"/>
+  <text x="555" y="80" text-anchor="middle" font-size="12" fill="#333">数据: 30</text>
+  <text x="625" y="115" text-anchor="middle" font-size="11" fill="#E65100">NULL</text>
+
+  <!-- 底部标注 -->
+  <text x="200" y="200" text-anchor="middle" font-size="11" fill="#555">数据域</text>
+  <text x="270" y="200" text-anchor="middle" font-size="11" fill="#555">指针域</text>
+  <text x="400" y="200" text-anchor="middle" font-size="11" fill="#888">← 一个节点 = 数据域 + 指针域</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg width="620" height="140" xmlns="http://www.w3.org/2000/svg">
+  <text x="310" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">未初始化的数组 int scores[5]</text>
+
+  <!-- 5 boxes -->
+  <rect x="40" y="42" width="100" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="90" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">[0]</text>
+  <text x="90" y="86" text-anchor="middle" font-size="18" fill="#999">?</text>
+
+  <rect x="148" y="42" width="100" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="198" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">[1]</text>
+  <text x="198" y="86" text-anchor="middle" font-size="18" fill="#999">?</text>
+
+  <rect x="256" y="42" width="100" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="306" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">[2]</text>
+  <text x="306" y="86" text-anchor="middle" font-size="18" fill="#999">?</text>
+
+  <rect x="364" y="42" width="100" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="414" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">[3]</text>
+  <text x="414" y="86" text-anchor="middle" font-size="18" fill="#999">?</text>
+
+  <rect x="472" y="42" width="100" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="522" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">[4]</text>
+  <text x="522" y="86" text-anchor="middle" font-size="18" fill="#999">?</text>
+
+  <!-- 连续内存标注 -->
+  <line x1="140" y1="72" x2="148" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="248" y1="72" x2="256" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="356" y1="72" x2="364" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="464" y1="72" x2="472" y2="72" stroke="#999" stroke-width="1"/>
+
+  <text x="310" y="125" text-anchor="middle" font-size="12" fill="#666">5 个 int 大小的连续内存空间，值不确定</text>
+</svg>

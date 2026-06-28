@@ -1,0 +1,59 @@
+<svg width="680" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="340" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">指针变量与被指向变量的关系</text>
+
+  <!-- ====== 左侧：变量 a ====== -->
+  <!-- 变量 a 外框 -->
+  <rect x="40" y="60" width="200" height="130" rx="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <!-- 标签 -->
+  <text x="140" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32">变量 a（int 类型）</text>
+  <line x1="60" y1="92" x2="220" y2="92" stroke="#2E7D32" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- a 的内容框 -->
+  <rect x="65" y="102" width="150" height="36" rx="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="140" y="125" text-anchor="middle" font-size="14" fill="#333">值：100</text>
+
+  <!-- a 的地址标注 -->
+  <rect x="65" y="146" width="150" height="30" rx="4" fill="#FFF9C4" stroke="#F57F17" stroke-width="1"/>
+  <text x="140" y="165" text-anchor="middle" font-size="12" fill="#F57F17">地址：0x1000</text>
+
+  <!-- a 底部地址 -->
+  <text x="140" y="210" text-anchor="middle" font-size="11" fill="#666">内存地址 0x1000</text>
+
+  <!-- ====== 右侧：变量 p ====== -->
+  <!-- 变量 p 外框 -->
+  <rect x="420" y="60" width="200" height="130" rx="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <!-- 标签 -->
+  <text x="520" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">变量 p（int* 类型）</text>
+  <line x1="440" y1="92" x2="600" y2="92" stroke="#1565C0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- p 的内容框 -->
+  <rect x="445" y="102" width="150" height="36" rx="4" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="520" y="125" text-anchor="middle" font-size="14" fill="#333">值：0x1000</text>
+
+  <!-- p 的地址标注 -->
+  <rect x="445" y="146" width="150" height="30" rx="4" fill="#FFF9C4" stroke="#F57F17" stroke-width="1"/>
+  <text x="520" y="165" text-anchor="middle" font-size="12" fill="#F57F17">地址：0x2000</text>
+
+  <!-- p 底部地址 -->
+  <text x="520" y="210" text-anchor="middle" font-size="11" fill="#666">内存地址 0x2000</text>
+
+  <!-- ====== 指针箭头：从 p 的内容指向 a ====== -->
+  <!-- 箭头从 p 的值标签出发，指向 a 的框 -->
+  <path d="M 445 120 L 350 120 L 350 100 L 215 100"
+        stroke="#4A90D9" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+
+  <!-- 箭头上方标注 -->
+  <text x="350" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#4A90D9">p 指向 a</text>
+  <text x="350" y="134" text-anchor="middle" font-size="10" fill="#888">（p 中存储的值 = a 的地址）</text>
+
+  <!-- ====== 底部说明 ====== -->
+  <rect x="100" y="240" width="480" height="28" rx="6" fill="#F5F5F5" stroke="#DDD" stroke-width="1"/>
+  <text x="340" y="259" text-anchor="middle" font-size="12" fill="#555">p 和 a 是两个独立的变量，各自占据不同的内存空间，p 里存的是 a 的地址</text>
+</svg>

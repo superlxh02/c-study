@@ -1,0 +1,106 @@
+<svg width="520" height="510" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 向下增长箭头（栈） -->
+    <marker id="arrowDown" markerWidth="10" markerHeight="8" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 8" fill="#E65100"/>
+    </marker>
+    <!-- 向上增长箭头（堆） -->
+    <marker id="arrowUp" markerWidth="10" markerHeight="8" refX="5" refY="1" orient="auto">
+      <polygon points="0 8, 10 8, 5 0" fill="#1565C0"/>
+    </marker>
+    <!-- 双向小箭头 -->
+    <marker id="arrowDownSmall" markerWidth="6" markerHeight="5" refX="3" refY="4" orient="auto">
+      <polygon points="0 0, 6 0, 3 5" fill="#999"/>
+    </marker>
+    <marker id="arrowUpSmall" markerWidth="6" markerHeight="5" refX="3" refY="1" orient="auto">
+      <polygon points="0 5, 6 5, 3 0" fill="#999"/>
+    </marker>
+    <!-- 内核空间斜线填充 -->
+    <pattern id="kernelHatch" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#EF5350" stroke-width="0.8" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- ========== 标题 ========== -->
+  <text x="260" y="24" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="16" font-weight="bold" fill="#333">C 程序的内存布局（经典示意图）</text>
+
+  <!-- ========== 右侧地址方向标签 ========== -->
+  <!-- 高地址 -->
+  <text x="498" y="48" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="11" fill="#888">高地址</text>
+  <line x1="498" y1="52" x2="498" y2="62" stroke="#888" stroke-width="1.5" marker-end="url(#arrowDownSmall)"/>
+
+  <!-- ========== 内核空间 ========== -->
+  <rect x="50" y="38" width="420" height="30" rx="4" fill="#FFEBEE" fill-opacity="0.6" stroke="#EF5350" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <rect x="50" y="38" width="420" height="30" rx="4" fill="url(#kernelHatch)"/>
+  <text x="260" y="57" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="11" fill="#C62828">内核空间（用户程序不可访问）</text>
+
+  <!-- 分隔间隙 -->
+  <line x1="100" y1="74" x2="420" y2="74" stroke="#DDD" stroke-width="0.5"/>
+
+  <!-- ========== 栈区 ========== -->
+  <rect x="50" y="78" width="420" height="88" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="260" y="100" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="14" font-weight="bold" fill="#E65100">栈 区（Stack）</text>
+  <text x="260" y="118" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="11" fill="#555">局部变量、函数参数、返回地址</text>
+  <text x="260" y="133" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#999">命令行参数 · 环境变量</text>
+  <!-- 向下增长箭头 -->
+  <line x1="450" y1="110" x2="450" y2="150" stroke="#E65100" stroke-width="2.5"/>
+  <polygon points="445 148, 455 148, 450 158" fill="#E65100"/>
+  <text x="452" y="142" text-anchor="start" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="9" fill="#E65100">向低地址增长 ↓</text>
+
+  <!-- ========== 空闲空间 / mmap ========== -->
+  <rect x="50" y="170" width="420" height="38" rx="3" fill="#FAFAFA" stroke="#CCC" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="260" y="187" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#999">↕ 空闲空间 / 内存映射区（mmap、共享库）</text>
+  <text x="260" y="201" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="9" fill="#BBB">栈向下与堆向上在此区域动态消长</text>
+
+  <!-- ========== 堆区 ========== -->
+  <rect x="50" y="212" width="420" height="88" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="260" y="234" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="14" font-weight="bold" fill="#1565C0">堆 区（Heap）</text>
+  <text x="260" y="252" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="11" fill="#555">动态分配的内存（malloc / calloc / realloc / free）</text>
+  <text x="260" y="267" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#999">手动管理 · 按需申请 · 生命周期由程序员控制</text>
+  <!-- 向上增长箭头 -->
+  <line x1="450" y1="280" x2="450" y2="240" stroke="#1565C0" stroke-width="2.5"/>
+  <polygon points="445 242, 455 242, 450 232" fill="#1565C0"/>
+  <text x="452" y="265" text-anchor="start" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="9" fill="#1565C0">向高地址增长 ↑</text>
+
+  <!-- ========== 分隔线 ========== -->
+  <line x1="50" y1="306" x2="470" y2="306" stroke="#999" stroke-width="0.8"/>
+
+  <!-- ========== BSS 段 ========== -->
+  <rect x="50" y="312" width="420" height="44" rx="5" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5"/>
+  <text x="260" y="332" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="13" font-weight="bold" fill="#2E7D32">BSS 段 · 未初始化数据</text>
+  <text x="260" y="348" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#666">未初始化的全局变量、static 变量（启动时自动填 0）</text>
+
+  <!-- ========== Data 段 ========== -->
+  <rect x="50" y="358" width="420" height="44" rx="5" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="260" y="378" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="13" font-weight="bold" fill="#1B5E20">数据段（Data）· 已初始化数据</text>
+  <text x="260" y="394" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#666">已初始化的全局变量、static 变量 · 字符串常量 · 只读数据</text>
+
+  <!-- 静态存储区 左侧括号标注 -->
+  <line x1="30" y1="334" x2="30" y2="380" stroke="#2E7D32" stroke-width="1.5"/>
+  <line x1="30" y1="334" x2="36" y2="334" stroke="#2E7D32" stroke-width="1.5"/>
+  <line x1="30" y1="380" x2="36" y2="380" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="24" y="362" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="9" fill="#2E7D32" transform="rotate(-90 24 362)">静态存储区</text>
+
+  <!-- ========== 分隔线 ========== -->
+  <line x1="50" y1="408" x2="470" y2="408" stroke="#999" stroke-width="0.8"/>
+
+  <!-- ========== 代码区 ========== -->
+  <rect x="50" y="414" width="420" height="46" rx="5" fill="#F5F5F5" stroke="#757575" stroke-width="1.8"/>
+  <text x="260" y="435" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="13" font-weight="bold" fill="#424242">代码区（Text）</text>
+  <text x="260" y="453" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="10" fill="#666">程序的机器指令（编译后的二进制代码 · 只读 · 编译时确定大小）</text>
+
+  <!-- ========== 底部 ========== -->
+  <!-- 低地址 -->
+  <text x="498" y="480" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="11" fill="#888">低地址</text>
+  <line x1="498" y1="476" x2="498" y2="466" stroke="#888" stroke-width="1.5" marker-end="url(#arrowUpSmall)"/>
+
+  <!-- NULL 保留区域 -->
+  <rect x="150" y="485" width="220" height="18" rx="3" fill="none" stroke="#BBB" stroke-width="0.8" stroke-dasharray="4,2"/>
+  <text x="260" y="498" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="9" fill="#AAA">0x0…000 附近通常保留（用于捕获 NULL 指针）</text>
+
+  <!-- ========== 左侧地址标注 ========== -->
+  <text x="46" y="45" text-anchor="end" font-family="monospace" font-size="8" fill="#CCC">0xFFFF…</text>
+  <text x="46" y="134" text-anchor="end" font-family="monospace" font-size="8" fill="#CCC">高</text>
+  <text x="46" y="286" text-anchor="end" font-family="monospace" font-size="8" fill="#CCC">低</text>
+  <text x="46" y="456" text-anchor="end" font-family="monospace" font-size="8" fill="#CCC">0x0000…</text>
+</svg>

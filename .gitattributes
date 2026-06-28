@@ -1,0 +1,13 @@
+* text=auto
+
+# 源码、文档和构建配置在所有平台统一使用 LF。
+*.c text eol=lf
+*.h text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+CMakeLists.txt text eol=lf
+
+# 图片按二进制文件保存，禁止换行转换。
+*.png binary
+*.svg text eol=lf

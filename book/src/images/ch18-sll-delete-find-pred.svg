@@ -1,0 +1,105 @@
+<svg width="840" height="370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4A90D9"/></marker>
+    <marker id="a-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#D32F2F"/></marker>
+    <marker id="a-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2E7D32"/></marker>
+  </defs>
+
+  <!-- 标题 -->
+  <rect x="0" y="0" width="840" height="34" rx="5" fill="#2E7D32"/>
+  <text x="420" y="23" text-anchor="middle" font-size="14" font-weight="bold" fill="white" font-family="sans-serif">步骤② 删除非头节点：找到前驱 p —— 关键：检查 p→next→data 而不是 p→data</text>
+
+  <!-- ===== Left: 错误 ===== -->
+  <rect x="10" y="44" width="400" height="310" rx="8" fill="#FFF5F5" stroke="#EF9A9A" stroke-width="1.8"/>
+  <rect x="10" y="44" width="400" height="30" rx="8" fill="#FFCDD2"/>
+  <rect x="10" y="58" width="400" height="16" fill="#FFCDD2"/>
+  <text x="210" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#C62828" font-family="sans-serif">❌ 错误做法：检查 p→data（p 停在目标节点上）</text>
+
+  <!-- 链表 -->
+  <rect x="20" y="102" width="40" height="28" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.5"/>
+  <text x="40" y="120" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100" font-family="sans-serif">head</text>
+  <line x1="60" y1="116" x2="77" y2="116" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#a-b)"/>
+
+  <!-- 节点10 -->
+  <rect x="82" y="94" width="105" height="44" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <line x1="152" y1="94" x2="152" y2="138" stroke="#1565C0" stroke-width="0.8"/>
+  <text x="117" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="117" y="132" text-anchor="middle" font-size="11" fill="#999" font-family="sans-serif">10</text>
+  <text x="205" y="112" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="205" y="132" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→20</text>
+
+  <!-- p 在10检查 -->
+  <text x="117" y="88" text-anchor="middle" font-size="8" fill="#888" font-family="sans-serif">p 在10: data=10≠20</text>
+
+  <!-- 节点20（目标） -->
+  <rect x="200" y="94" width="105" height="44" rx="5" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2.2"/>
+  <line x1="270" y1="94" x2="270" y2="138" stroke="#D32F2F" stroke-width="1"/>
+  <text x="235" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="235" y="132" text-anchor="middle" font-size="11" font-weight="bold" fill="#D32F2F" font-family="sans-serif">20</text>
+  <text x="323" y="112" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="323" y="132" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→30</text>
+
+  <text x="235" y="88" text-anchor="middle" font-size="8" fill="#D32F2F" font-family="sans-serif">目标</text>
+
+  <!-- 节点30 -->
+  <rect x="318" y="94" width="80" height="44" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1"/>
+  <line x1="378" y1="94" x2="378" y2="138" stroke="#1565C0" stroke-width="0.7"/>
+  <text x="348" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="348" y="132" text-anchor="middle" font-size="10" fill="#999" font-family="sans-serif">30</text>
+  <text x="408" y="112" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="408" y="132" text-anchor="middle" font-size="7" fill="#888" font-family="sans-serif">NULL</text>
+
+  <!-- p 停在20 -->
+  <rect x="190" y="162" width="230" height="56" rx="6" fill="#FFCDD2" stroke="#EF9A9A" stroke-width="1.5"/>
+  <text x="305" y="182" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828" font-family="sans-serif">p 停在节点 20 上（目标本身）</text>
+  <text x="305" y="202" text-anchor="middle" font-size="10" fill="#C62828" font-family="sans-serif">无法知道 20 的前驱是谁！</text>
+
+  <text x="210" y="258" text-anchor="middle" font-size="10" fill="#B71C1C" font-family="sans-serif">单链表只能从前往后走</text>
+  <text x="210" y="278" text-anchor="middle" font-size="10" fill="#B71C1C" font-family="sans-serif">没有 prev 指针，无法回退</text>
+  <text x="210" y="308" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828" font-family="sans-serif">结论：停在目标上 = 无法删除</text>
+
+  <!-- ===== 分隔 ===== -->
+  <text x="420" y="199" text-anchor="middle" font-size="24" fill="#888" font-family="sans-serif">VS</text>
+
+  <!-- ===== Right: 正确 ===== -->
+  <rect x="430" y="44" width="400" height="310" rx="8" fill="#F1F8E9" stroke="#A5D6A7" stroke-width="2"/>
+  <rect x="430" y="44" width="400" height="30" rx="8" fill="#C8E6C9"/>
+  <rect x="430" y="58" width="400" height="16" fill="#C8E6C9"/>
+  <text x="630" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32" font-family="sans-serif">✅ 正确做法：检查 p→next→data（p 停在目标前面）</text>
+
+  <rect x="440" y="102" width="40" height="28" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.5"/>
+  <text x="460" y="120" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100" font-family="sans-serif">head</text>
+  <line x1="480" y1="116" x2="497" y2="116" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#a-b)"/>
+
+  <!-- 节点10（p在此） -->
+  <rect x="502" y="94" width="105" height="44" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="572" y1="94" x2="572" y2="138" stroke="#2E7D32" stroke-width="1"/>
+  <text x="537" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="537" y="132" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32" font-family="sans-serif">10</text>
+  <text x="625" y="112" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="625" y="132" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→20</text>
+
+  <text x="537" y="86" text-anchor="middle" font-size="9" fill="#2E7D32" font-family="sans-serif">p 停在此处！</text>
+
+  <!-- 检查箭头 p->next->data -->
+  <line x1="537" y1="144" x2="620" y2="144" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="578" y="158" text-anchor="middle" font-size="8" fill="#2E7D32" font-family="sans-serif">检查 p→next→data</text>
+
+  <!-- 节点20（目标） -->
+  <rect x="620" y="94" width="105" height="44" rx="5" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2"/>
+  <line x1="690" y1="94" x2="690" y2="138" stroke="#D32F2F" stroke-width="1"/>
+  <text x="655" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="sans-serif">data</text>
+  <text x="655" y="132" text-anchor="middle" font-size="11" font-weight="bold" fill="#D32F2F" font-family="sans-serif">20</text>
+  <text x="743" y="112" text-anchor="middle" font-size="8" fill="#999" font-family="sans-serif">next</text>
+  <text x="743" y="132" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">→30</text>
+
+  <text x="655" y="86" text-anchor="middle" font-size="8" fill="#D32F2F" font-family="sans-serif">目标</text>
+
+  <rect x="445" y="190" width="370" height="60" rx="6" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="630" y="210" text-anchor="middle" font-size="11" fill="#333" font-family="sans-serif">while (p→next != NULL && p→next→data != data)</text>
+  <text x="630" y="228" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="sans-serif">p→next→data == 20 == 目标 → 条件不成立，循环停止</text>
+  <text x="630" y="244" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="sans-serif">p 恰好停在目标的前面 ✓</text>
+
+  <text x="630" y="288" text-anchor="middle" font-size="10" fill="#2E7D32" font-family="sans-serif">p 是前驱 → 修改 p→next 即可绕过目标</text>
+  <text x="630" y="313" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">（接下来步骤③④完成绕过和释放）</text>
+</svg>

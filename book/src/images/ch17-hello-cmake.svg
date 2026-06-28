@@ -1,0 +1,21 @@
+<svg width="360" height="160" xmlns="http://www.w3.org/2000/svg">
+  <text x="180" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">hello_cmake/ 目录结构</text>
+
+  <rect x="30" y="38" width="22" height="16" rx="2" fill="#FFC107" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="58" y="52" text-anchor="start" font-size="13" font-weight="bold" fill="#333">hello_cmake/</text>
+
+  <line x1="55" y1="56" x2="55" y2="130" stroke="#BBB" stroke-width="1.5"/>
+
+  <line x1="55" y1="80" x2="90" y2="80" stroke="#BBB" stroke-width="1.5"/>
+  <rect x="78" y="72" width="120" height="16" rx="2" fill="#E3F2FD" stroke="#1565C0" stroke-width="1"/>
+  <text x="138" y="84" text-anchor="middle" font-size="11" fill="#333">main.c</text>
+
+  <line x1="55" y1="108" x2="90" y2="108" stroke="#BBB" stroke-width="1.5"/>
+  <rect x="78" y="100" width="120" height="16" rx="2" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1"/>
+  <text x="138" y="112" text-anchor="middle" font-size="11" fill="#333">CMakeLists.txt</text>
+
+  <rect x="230" y="136" width="16" height="12" rx="2" fill="#FFC107" stroke="#F57F17" stroke-width="1"/>
+  <text x="252" y="146" text-anchor="start" font-size="10" fill="#666">文件夹</text>
+  <rect x="290" y="136" width="16" height="12" rx="2" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1"/>
+  <text x="312" y="146" text-anchor="start" font-size="10" fill="#666">CMake 配置</text>
+</svg>

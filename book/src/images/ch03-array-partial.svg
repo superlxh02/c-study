@@ -1,0 +1,34 @@
+<svg width="620" height="140" xmlns="http://www.w3.org/2000/svg">
+  <text x="310" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">部分初始化的数组 int scores[5] = {85, 92}</text>
+
+  <!-- 前两个有值 -->
+  <rect x="40" y="42" width="100" height="60" rx="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="90" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32">[0]</text>
+  <text x="90" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#333">85</text>
+
+  <rect x="148" y="42" width="100" height="60" rx="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="198" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32">[1]</text>
+  <text x="198" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#333">92</text>
+
+  <!-- 后三个自动填 0 -->
+  <rect x="256" y="42" width="100" height="60" rx="6" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="2"/>
+  <text x="306" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#9E9E9E">[2]</text>
+  <text x="306" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#1565C0">0</text>
+
+  <rect x="364" y="42" width="100" height="60" rx="6" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="2"/>
+  <text x="414" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#9E9E9E">[3]</text>
+  <text x="414" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#1565C0">0</text>
+
+  <rect x="472" y="42" width="100" height="60" rx="6" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="2"/>
+  <text x="522" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#9E9E9E">[4]</text>
+  <text x="522" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#1565C0">0</text>
+
+  <line x1="140" y1="72" x2="148" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="248" y1="72" x2="256" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="356" y1="72" x2="364" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="464" y1="72" x2="472" y2="72" stroke="#999" stroke-width="1"/>
+
+  <!-- 标注 -->
+  <text x="90" y="125" text-anchor="middle" font-size="11" fill="#2E7D32">手动赋值</text>
+  <text x="414" y="125" text-anchor="middle" font-size="11" fill="#1565C0">编译器自动填 0</text>
+</svg>

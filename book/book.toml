@@ -1,0 +1,12 @@
+[book]
+title = "零基础C语言入门到进阶"
+authors = ["某不知名开花者"]
+language = "zh-CN"
+description = "从零基础开始学习 C 语言，涵盖核心语法、内存与指针、多文件组织、CMake 和基本数据结构"
+
+[output.html]
+mathjax-support = true
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true

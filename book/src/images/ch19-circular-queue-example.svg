@@ -1,0 +1,73 @@
+<svg width="680" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="340" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">环形队列入队/出队 — 综合示例 (MAX_SIZE=6, 实际存5个)</text>
+
+  <!-- 状态1：初始空 -->
+  <text x="85" y="48" text-anchor="middle" font-size="10" fill="#888">①初始空</text>
+  <rect x="20" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="70" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="120" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="170" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="220" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="270" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <text x="45" y="80" text-anchor="middle" font-size="9" fill="#888">?</text>
+  <text x="45" y="48" text-anchor="middle" font-size="8" fill="#333">f,r</text>
+
+  <!-- 状态2：入队5个 -->
+  <text x="130" y="48" text-anchor="middle" font-size="10" fill="#888">②入队10,20,30,40,50</text>
+  <rect x="70" y="58" width="44" height="32" fill="#FFEBEE" stroke="#D32F2F" stroke-width="1.5"/>
+  <rect x="114" y="58" width="44" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="158" y="58" width="44" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="202" y="58" width="44" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="246" y="58" width="44" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="290" y="58" width="44" height="32" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="92" y="78" text-anchor="middle" font-size="9" fill="#D32F2F">10</text>
+  <text x="136" y="78" text-anchor="middle" font-size="9" fill="#333">20</text>
+  <text x="180" y="78" text-anchor="middle" font-size="9" fill="#333">30</text>
+  <text x="224" y="78" text-anchor="middle" font-size="9" fill="#333">40</text>
+  <text x="268" y="78" text-anchor="middle" font-size="9" fill="#333">50</text>
+  <text x="312" y="78" text-anchor="middle" font-size="7" fill="#2E7D32">满</text>
+  <text x="92" y="48" text-anchor="middle" font-size="8" fill="#D32F2F">f</text>
+  <text x="312" y="48" text-anchor="middle" font-size="8" fill="#2E7D32">r</text>
+
+  <!-- 状态3：出队2个 -->
+  <text x="175" y="48" text-anchor="middle" font-size="10" fill="#888">③出队10,20</text>
+  <rect x="105" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="155" y="58" width="50" height="32" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+  <rect x="205" y="58" width="50" height="32" fill="#FFEBEE" stroke="#D32F2F" stroke-width="1.5"/>
+  <rect x="255" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="305" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="355" y="58" width="50" height="32" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="230" y="78" text-anchor="middle" font-size="9" fill="#D32F2F">30</text>
+  <text x="280" y="78" text-anchor="middle" font-size="9" fill="#333">40</text>
+  <text x="330" y="78" text-anchor="middle" font-size="9" fill="#333">50</text>
+  <text x="380" y="78" text-anchor="middle" font-size="7" fill="#2E7D32">wait</text>
+  <text x="230" y="48" text-anchor="middle" font-size="8" fill="#D32F2F">f</text>
+  <text x="380" y="48" text-anchor="middle" font-size="8" fill="#2E7D32">r</text>
+
+  <!-- 状态4：入队60,70 -->
+  <text x="240" y="48" text-anchor="middle" font-size="10" fill="#888">④入队60在哪？r绕回[0]!</text>
+  <rect x="105" y="58" width="50" height="32" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.5"/>
+  <rect x="155" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="205" y="58" width="50" height="32" fill="#FFEBEE" stroke="#D32F2F" stroke-width="1.5"/>
+  <rect x="255" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="305" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="355" y="58" width="50" height="32" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="130" y="78" text-anchor="middle" font-size="9" fill="#2E7D32">70</text>
+  <text x="180" y="78" text-anchor="middle" font-size="9" fill="#333">60</text>
+  <text x="230" y="78" text-anchor="middle" font-size="9" fill="#D32F2F">30</text>
+  <text x="280" y="78" text-anchor="middle" font-size="9" fill="#333">40</text>
+  <text x="330" y="78" text-anchor="middle" font-size="9" fill="#333">50</text>
+  <text x="380" y="78" text-anchor="middle" font-size="7" fill="#888">wait</text>
+
+  <text x="230" y="48" text-anchor="middle" font-size="8" fill="#D32F2F">f</text>
+  <text x="155" y="48" text-anchor="middle" font-size="8" fill="#2E7D32">r</text>
+
+  <!-- 说明 -->
+  <text x="340" y="150" text-anchor="middle" font-size="11" fill="#D32F2F">关键：rear 已经绕回到数组开头 [0][1]，成功复用了出队腾出的空间！</text>
+  <text x="340" y="170" text-anchor="middle" font-size="11" fill="#555">出队顺序：30→40→50→60→70（先进先出，没有浪费空间）</text>
+
+  <!-- 环形示意 -->
+  <circle cx="340" cy="245" r="25" fill="none" stroke="#1565C0" stroke-width="2"/>
+  <text x="340" y="225" text-anchor="middle" font-size="9" fill="#888">环形</text>
+  <text x="340" y="260" text-anchor="middle" font-size="9" fill="#888">=取模运算</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg width="660" height="150" xmlns="http://www.w3.org/2000/svg">
+  <text x="330" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">字符串 "Hello" 在内存中的存储</text>
+
+  <!-- 6 boxes -->
+  <rect x="40" y="42" width="90" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="85" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">[0]</text>
+  <text x="85" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">H</text>
+
+  <rect x="138" y="42" width="90" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="183" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">[1]</text>
+  <text x="183" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">e</text>
+
+  <rect x="236" y="42" width="90" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="281" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">[2]</text>
+  <text x="281" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">l</text>
+
+  <rect x="334" y="42" width="90" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="379" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">[3]</text>
+  <text x="379" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">l</text>
+
+  <rect x="432" y="42" width="90" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="477" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">[4]</text>
+  <text x="477" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">o</text>
+
+  <!-- Null terminator 特殊样式 -->
+  <rect x="530" y="42" width="90" height="60" rx="6" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+  <text x="575" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#C62828">[5]</text>
+  <text x="575" y="86" text-anchor="middle" font-size="16" font-weight="bold" fill="#C62828">\0</text>
+
+  <line x1="130" y1="72" x2="138" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="228" y1="72" x2="236" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="326" y1="72" x2="334" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="424" y1="72" x2="432" y2="72" stroke="#999" stroke-width="1"/>
+  <line x1="522" y1="72" x2="530" y2="72" stroke="#999" stroke-width="1"/>
+
+  <!-- 底部说明 -->
+  <text x="195" y="128" text-anchor="middle" font-size="11" fill="#1565C0">可见字符 (5 个)</text>
+  <text x="575" y="128" text-anchor="middle" font-size="11" fill="#C62828">空字符（字符串结束标志）</text>
+</svg>

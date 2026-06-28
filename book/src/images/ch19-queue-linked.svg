@@ -1,0 +1,45 @@
+<svg width="550" height="230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="q-arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A90D9"/>
+    </marker>
+  </defs>
+
+  <text x="275" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">链式队列结构示意图</text>
+
+  <!-- Queue 结构体 -->
+  <rect x="10" y="40" width="100" height="90" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="60" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#E65100">Queue</text>
+  <text x="60" y="85" text-anchor="middle" font-size="9" fill="#333">front →</text>
+  <text x="60" y="105" text-anchor="middle" font-size="9" fill="#333">rear →</text>
+
+  <!-- front 箭头 -->
+  <line x1="110" y1="80" x2="145" y2="65" stroke="#D32F2F" stroke-width="2" marker-end="url(#q-arr)"/>
+  <text x="130" y="58" font-size="9" fill="#D32F2F">队首</text>
+
+  <!-- rear 箭头 -->
+  <line x1="110" y1="100" x2="145" y2="130" stroke="#2E7D32" stroke-width="2" marker-end="url(#q-arr)"/>
+  <text x="130" y="143" font-size="9" fill="#2E7D32">队尾</text>
+
+  <!-- 链表节点 -->
+  <rect x="150" y="50" width="100" height="40" rx="4" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2"/>
+  <text x="200" y="75" text-anchor="middle" font-size="12" fill="#D32F2F">10</text>
+
+  <rect x="280" y="50" width="100" height="40" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="330" y="75" text-anchor="middle" font-size="12" fill="#333">20</text>
+
+  <rect x="410" y="50" width="100" height="40" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="460" y="75" text-anchor="middle" font-size="12" fill="#2E7D32">30</text>
+
+  <!-- 箭头 -->
+  <line x1="250" y1="70" x2="275" y2="70" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#q-arr)"/>
+  <line x1="380" y1="70" x2="405" y2="70" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#q-arr)"/>
+
+  <text x="510" y="75" font-size="11" fill="#888">NULL</text>
+
+  <!-- 操作标注 -->
+  <text x="200" y="40" text-anchor="middle" font-size="10" fill="#D32F2F">出队在这端</text>
+  <text x="460" y="40" text-anchor="middle" font-size="10" fill="#2E7D32">入队在这端</text>
+
+  <text x="275" y="195" text-anchor="middle" font-size="11" fill="#888">front 指向队首（出队端），rear 指向队尾（入队端）</text>
+</svg>
