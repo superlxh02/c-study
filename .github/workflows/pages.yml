@@ -2,7 +2,9 @@ name: Deploy mdBook to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
+    paths:
+      - "book/**"
   workflow_dispatch:
 
 permissions:
